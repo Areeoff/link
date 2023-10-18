@@ -9,14 +9,8 @@
 
         // Получаем значение параметра "code" из URL.
         var gameCode = window.location.href.split("?")[1];
+         <p><a href=gameCode>Launch</a></p>
 
-        // Проверяем наличие кода и подключаемся к нему по URL.
-        if (gameCode) {
-            var redirectUrl = "mazebattle://mylink?" + gameCode;
-            window.location.href = redirectUrl;
-        } else {
-            alert('No game code found in the URL.');
-        }
     </script>
 </head>
 <body>
