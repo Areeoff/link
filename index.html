@@ -6,19 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Link Handler</title>
     <script>
-        // Функция для извлечения параметров из URL.
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
 
         // Получаем значение параметра "code" из URL.
-        var gameCode = getParameterByName('code');
+        var gameCode = window.location.href.split("?")[1];
 
         // Проверяем наличие кода и подключаемся к нему по URL.
         if (gameCode) {
